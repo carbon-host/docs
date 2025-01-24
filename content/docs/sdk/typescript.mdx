@@ -1,0 +1,62 @@
+---
+title: TypeScript SDK
+---
+
+import { Tabs, Tab } from '@/components/tabs';
+
+# TypeScript SDK
+
+The `@carbonhost/typescript` package provides a fully typed SDK for interacting with Carbon services.
+
+## Installation
+
+<Tabs items={['npm', 'yarn', 'pnpm', 'bun']}>
+<Tab value="npm">
+```bash
+npm install @carbonhost/typescript
+```
+</Tab>
+<Tab value="yarn">
+```bash
+yarn add @carbonhost/typescript
+```
+</Tab>
+<Tab value="pnpm">
+```bash
+pnpm add @carbonhost/typescript
+```
+</Tab>
+<Tab value="bun">
+```bash
+bun add @carbonhost/typescript
+```
+</Tab>
+</Tabs>
+
+## Quick Start
+
+```typescript
+import { Carbon } from '@carbonhost/typescript';
+
+// Initialize the client
+const carbon = new Carbon({
+  apiKey: 'your-api-key'
+});
+
+// Example: Create a new deployment
+const deployment = await carbon.deployments.create({
+  name: 'my-app',
+  source: {
+    type: 'github',
+    repository: 'username/repo'
+  }
+});
+```
+
+## Features
+
+- Full TypeScript support with comprehensive type definitions
+- Promise-based API
+- Built-in retry mechanisms
+- Automatic error handling
+- WebSocket support for real-time updates 

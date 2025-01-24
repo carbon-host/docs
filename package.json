@@ -6,15 +6,27 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "build:docs": "node ./scripts/generate-docs.mjs"
   },
   "dependencies": {
-    "next": "15.1.5",
-    "fumadocs-ui": "14.7.7",
+    "@fumadocs/cli": "^0.0.7",
+    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-collapsible": "^1.1.2",
+    "@radix-ui/react-scroll-area": "^1.2.2",
+    "@radix-ui/react-tabs": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
     "fumadocs-core": "14.7.7",
+    "fumadocs-mdx": "11.3.1",
+    "fumadocs-openapi": "^5.11.8",
+    "fumadocs-ui": "14.7.7",
+    "lucide-react": "^0.473.0",
+    "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "fumadocs-mdx": "11.3.1"
+    "rimraf": "^6.0.1",
+    "shiki": "^2.1.0",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@types/node": "22.10.7",

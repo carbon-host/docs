@@ -1,0 +1,61 @@
+---
+title: Kotlin SDK
+---
+
+# Kotlin SDK
+
+The Carbon Kotlin SDK provides a native Kotlin interface for interacting with Carbon services.
+
+## Installation
+
+Add the following to your `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation("com.carbonhost:carbon-sdk:1.0.0")
+}
+```
+
+Or if you're using Maven, add to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>com.carbonhost</groupId>
+    <artifactId>carbon-sdk</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+## Quick Start
+
+```kotlin
+import com.carbonhost.sdk.Carbon
+import com.carbonhost.sdk.models.DeploymentConfig
+
+suspend fun main() {
+    val carbon = Carbon {
+        apiKey = "your-api-key"
+    }
+    
+    // Create a new deployment
+    val deployment = carbon.deployments.create(
+        DeploymentConfig(
+            name = "my-app",
+            source = SourceConfig(
+                type = "github",
+                repository = "username/repo"
+            )
+        )
+    )
+    
+    println("Deployment created: ${deployment.id}")
+}
+```
+
+## Features
+
+- Kotlin-first API design with coroutines support
+- Type-safe builder patterns
+- Automatic request retry handling
+- Comprehensive error handling with sealed classes
+- Flow API for real-time updates 

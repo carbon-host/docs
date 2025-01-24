@@ -1,0 +1,24 @@
+{
+    "title": "CLI",
+    "description": "The Carbon CLI",
+    "icon": "Building2",
+    "pages": [
+      "---Guide---",
+      "index",
+      "comparisons",
+      "...",
+      "---Setup---",
+      "manual-installation",
+      "static-export",
+      "(integrations)",
+      "---Writing---",
+      "markdown",
+      "page-conventions",
+      "navigation",
+      "---UI---",
+      "theme",
+      "components",
+      "mdx",
+      "layouts"
+    ]
+  }

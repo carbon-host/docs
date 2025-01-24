@@ -1,0 +1,53 @@
+---
+title: API Reference
+---
+
+# Carbon API Reference
+
+Welcome to the Carbon API reference documentation. Our API follows REST principles and uses JSON for request and response bodies.
+
+## Authentication
+
+All API requests require authentication using an API key. Include your API key in the `Authorization` header:
+
+```bash
+Authorization: Bearer your-api-key
+```
+
+## Base URL
+
+```
+https://api.carbonhost.com/v1
+```
+
+## Rate Limiting
+
+The API is rate limited to:
+- 1000 requests per minute for standard accounts
+- 5000 requests per minute for enterprise accounts
+
+## Common Response Codes
+
+- `200 OK`: Request successful
+- `201 Created`: Resource created
+- `400 Bad Request`: Invalid request
+- `401 Unauthorized`: Invalid or missing API key
+- `403 Forbidden`: Valid API key but insufficient permissions
+- `404 Not Found`: Resource not found
+- `429 Too Many Requests`: Rate limit exceeded
+- `500 Internal Server Error`: Server error
+
+## Example Request
+
+```bash
+curl -X POST https://api.carbonhost.com/v1/stars \
+  -H "Authorization: Bearer your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "survival-1",
+    "type": "minecraft",
+    "version": "1.20.1",
+    "memory": "4G",
+    "galaxy": "us-east-1"
+  }'
+```
