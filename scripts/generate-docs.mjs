@@ -1,7 +1,7 @@
 import * as OpenAPI from 'fumadocs-openapi';
 import { rimrafSync } from 'rimraf';
 
-const out = '/content/docs/openapi';
+const out = './content/docs/(api)';
 
 // clean generated files
 // rimrafSync(out, {
@@ -13,6 +13,6 @@ const out = '/content/docs/openapi';
 void OpenAPI.generateFiles({
   // input files
   input: ['./openapi.json'],
-  output: `/content/docs/openapi`,
+  output: out,
   groupBy: 'tag',
 });
