@@ -1,0 +1,174 @@
+---
+title: CLI
+description: Carbon CLI reference and usage guide
+---
+
+import { Tabs, Tab } from '@/components/tabs';
+import { Steps } from '@/components/steps';
+import { Callout } from '@/components/callout';
+
+# Carbon CLI
+
+The Carbon CLI (`@carbonhost/cli`) provides a command-line interface for managing your Carbon deployments and resources.
+
+## Installation
+
+<Tabs items={['npm', 'yarn', 'pnpm', 'bun']}>
+<Tab value="npm">
+```bash
+npm install -g @carbonhost/cli
+```
+</Tab>
+<Tab value="yarn">
+```bash
+yarn global add @carbonhost/cli
+```
+</Tab>
+<Tab value="pnpm">
+```bash
+pnpm add -g @carbonhost/cli
+```
+</Tab>
+<Tab value="bun">
+```bash
+bun add -g @carbonhost/cli
+```
+</Tab>
+</Tabs>
+
+## Getting Started
+
+<Steps>
+### Install the CLI
+Install using your preferred package manager
+
+### Authenticate
+```bash
+carbon login
+```
+
+### Initialize Configuration
+```bash
+carbon init
+```
+
+### Create Your First Star
+```bash
+carbon star create my-first-server --type minecraft --version 1.20.1
+```
+</Steps>
+
+## Command Reference
+
+### Star Management
+
+<Tabs items={['Create', 'List', 'Control', 'Delete']}>
+<Tab value="Create">
+```bash
+# Create a new Minecraft server
+carbon star create survival-1 --type minecraft --version 1.20.1 --memory 4G
+
+# Create from template
+carbon star create minigame-1 --template minigame
+```
+</Tab>
+
+<Tab value="List">
+```bash
+# List all Stars
+carbon star list
+
+# List Stars in specific Galaxy
+carbon star list --galaxy us-east-1
+
+# List Stars with specific status
+carbon star list --status running
+```
+</Tab>
+
+<Tab value="Control">
+```bash
+# Start a Star
+carbon star start survival-1
+
+# Stop a Star
+carbon star stop survival-1
+
+# Restart a Star
+carbon star restart survival-1
+
+# Scale Star resources
+carbon star scale survival-1 --memory 8G
+```
+</Tab>
+
+<Tab value="Delete">
+```bash
+# Delete a Star
+carbon star delete survival-1
+
+# Force delete (use with caution)
+carbon star delete survival-1 --force
+```
+</Tab>
+</Tabs>
+
+### Galaxy Management
+
+```bash
+# List available Galaxies
+carbon galaxy list
+
+# Get Galaxy status
+carbon galaxy status us-east-1
+
+# Scale Galaxy capacity
+carbon galaxy scale us-east-1 --min 2 --max 5
+```
+
+### Constellation Management
+
+```bash
+# Create a Constellation
+carbon constellation create minigames --stars 5
+
+# List Constellations
+carbon constellation list
+
+# Scale Constellation
+carbon constellation scale minigames --stars 10
+```
+
+## Configuration
+
+The CLI can be configured using a `carbon.config.json` file:
+
+```json
+{
+  "name": "my-network",
+  "region": "us-east-1",
+  "env": "production",
+  "stars": {
+    "default": {
+      "type": "minecraft",
+      "version": "1.20.1",
+      "memory": "4G"
+    }
+  }
+}
+```
+
+<Callout type="info">
+Configuration files can be placed in your project root or in `~/.carbon/config.json` for global settings.
+</Callout>
+
+## Environment Variables
+
+- `CARBON_API_KEY`: Your API key for authentication
+- `CARBON_REGION`: Default region for operations
+- `CARBON_ENV`: Environment (production/staging)
+- `CARBON_DEBUG`: Enable debug logging
+
+<Callout type="warning">
+Never commit API keys to version control. Use environment variables or configuration files that are properly secured.
+</Callout> 

@@ -1,0 +1,46 @@
+---
+title: Glossary
+description: Key terms and concepts in Carbon
+---
+
+# Carbon Glossary
+
+## Core Concepts
+
+### Star ⭐
+A single Minecraft server instance. This is the basic unit of deployment in Carbon, representing one Minecraft server with its own configuration, world, and player base.
+
+### Galaxy 🌌
+A game server node that can host multiple Stars. Galaxies manage resource allocation, networking, and orchestration of the Stars running within them.
+
+### Constellation 🌟
+A group of related Stars that work together. This could be a network of minigame servers, lobby systems, or any collection of servers that function as a unit.
+
+### Nebula ☁️
+The networking layer that connects Stars, Galaxies, and players. It handles routing, load balancing, and ensures smooth communication between all components.
+
+### Comet ☄️
+A temporary Star that's spun up on-demand for specific purposes (like tournament servers or temporary event worlds) and automatically cleaned up afterward.
+
+### Orbit 🛸
+The deployment pipeline that manages how your Stars are updated, backed up, and maintained. It ensures smooth version transitions and zero-downtime updates.
+
+## Technical Terms
+
+### Galaxy Node
+A physical or virtual machine that hosts multiple Stars. Each Galaxy Node is part of a Galaxy and manages its own resource allocation.
+
+### Star Template
+A predefined configuration for creating new Stars, including server type, version, and resource requirements.
+
+### Constellation Template
+A blueprint for creating multiple related Stars that work together as a single unit.
+
+### Nebula Proxy
+The load balancing and routing component that directs player traffic to the appropriate Stars.
+
+### Carbon CLI
+The command-line interface tool for managing Carbon resources and deployments.
+
+### Carbon SDK
+The software development kits available for integrating Carbon into your applications. 

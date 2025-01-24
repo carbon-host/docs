@@ -1,0 +1,15 @@
+{
+    "title": "General",
+    "pages": [
+        "index",
+        "---",
+        "cli",
+        "---",
+        "glossary",
+        "---",
+        "privacy-policy",
+        "terms-of-service",
+        "security",
+        "support"
+    ]
+} 
