@@ -1,106 +1,81 @@
 ---
-title: Pricing
-description: Carbon's pricing plans and features
+title: 'Pricing'
+description: 'Carbon offers simple pricing with no hidden fees. Pay only for the resources you use.'
 ---
-
-import { Tabs, Tab } from '@/components/tabs';
-import { Card, Cards } from '@/components/card';
-
-# Pricing
-
-Choose the plan that best fits your needs. All plans include our core features and world-class support.
-
-## Plans
-
-<Cards>
-<Card title="Free Tier" icon="🌟">
-### Features
-- Up to 3 concurrent servers
-- Monthly billing
-- Basic support
-- Community access
-
-### Pricing
-- $3/GB RAM/month
-- Monthly billing only
-</Card>
-
-<Card title="Carbon Pro" icon="⭐">
-### Features
-- Up to 7 concurrent servers
-- Priority support
-- Carbon Marketplace access
-- Advanced analytics
-- Hourly billing
-
-
-### Pricing
-- $9.99/month subscription
-- $3/GB RAM/month (billed hourly)
-</Card>
-</Cards>
 
 ## Resource Pricing
 
-<Tabs items={['Memory', 'Storage', 'Backups']}>
-<Tab value="Memory">
-### RAM Pricing
-- **Standard Rate**: $3/GB/month
-- **Pro Plan**: Same rate but billed hourly
-- **Minimum**: 2GB per server
-- **Maximum**: 16GB per server
-</Tab>
+### Compute
+- **$3/GB** of RAM per month
+- Scale from 2GB to 16GB per server
+- Includes proportional CPU allocation
+- SSD storage included
 
-<Tab value="Storage">
-### Storage Pricing
-- **SSD Storage**: Included with RAM
-- **Additional Storage**: $0.10/GB/month
-- **Minimum**: 10GB per server
-- **Maximum**: 1TB per server
-</Tab>
+### Backups
+- **$0.15/GB** per month
+- Daily automated backups
+- 30-day retention
+- Instant restoration
 
-<Tab value="Backups">
-### Backup Storage
-- **Free Tier**: Not included
-- **Pro Plan**: $0.015/GB/month
-- **Retention**: Up to 30 days
-- **Frequency**: Daily backups
-</Tab>
-</Tabs>
+## What's Included
 
-## Carbon Pro Benefits
+### Infrastructure
+- Enterprise-grade hardware
+- Global network presence
+- DDoS protection
+- Automatic failover
+- High-performance SSDs
+- Low-latency network
 
-### Enhanced Features
-- Hourly billing for precise cost control
-- Access to Carbon Marketplace
-- Priority support queue
-- Advanced monitoring tools
-- Custom domain support
-- API rate limit increase
+### Control Panel
+- Real-time server stats
+- Instant deployment
+- Advanced file manager
+- One-click plugin installer
+- Mobile-friendly console
+- Multi-server management
 
-### Resource Benefits
-- Up to 7 concurrent servers (vs 3 on free tier)
-- Automated backup system
-- Dedicated IP addresses
-- Premium server locations
-- Resource scaling priority
+### Developer Tools
+- Comprehensive API
+- WebSocket support
+- Multiple SDKs
+- CLI tools
+- CI/CD integration
 
-### Support Benefits
-- Priority ticket handling
-- Discord priority support
-- Advanced technical support
-- Custom configuration assistance
+### Support
+- 24/7 technical support
+- Discord community
+- Documentation library
+- Video tutorials
 - Migration assistance
 
-## Billing Cycles
+## Example Pricing
 
-### Free Tier
-- Monthly billing only
-- Charged at the end of each month
-- No minimum commitment
+Here are some common server configurations and their monthly costs:
 
-### Carbon Pro
-- $9.99 monthly subscription
-- Resources billed hourly
-- Backup storage billed monthly
-- Flexible payment methods 
+| Server Size | Monthly RAM Cost | Backup Cost (if enabled) |
+|------------|------------------|-------------------------|
+| 2GB        | $6/month        | $0.30/month            |
+| 4GB        | $12/month       | $0.60/month            |
+| 8GB        | $24/month       | $1.20/month            |
+| 16GB       | $48/month       | $2.40/month            |
+
+*Backup costs are estimated based on average usage. Actual costs may vary depending on your data size.*
+
+## Frequently Asked Questions
+
+### How does billing work?
+You purchase credits which can be used to deploy and maintain servers. Server costs are calculated based on RAM allocation and any enabled backup storage.
+
+### Are there any minimum commitments?
+No. You only pay for what you use, when you use it.
+
+### Do you offer refunds?
+Refund requests are handled on a case-by-case basis. Contact us at contact@carbon.host for assistance.
+
+### What payment methods do you accept?
+We accept all major credit cards and PayPal through our secure payment processor.
+
+## Get Started
+
+Ready to launch your server? [Create an account](https://dash.mclicense.org) or [contact us](mailto:contact@carbon.host) if you have any questions.
