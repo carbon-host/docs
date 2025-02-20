@@ -1,0 +1,91 @@
+---
+title: CLI
+description: Carbon CLI reference and usage guide
+---
+
+import { Tabs, Tab } from '@/components/tabs';
+import { Steps } from '@/components/steps';
+import { Callout } from '@/components/callout';
+
+# Carbon CLI
+
+The Carbon CLI (`@carbonhost/cli`) provides a command-line interface for managing your Carbon deployments and resources.
+
+## Installation
+
+<Tabs items={['npm', 'yarn', 'pnpm', 'bun']}>
+<Tab value="npm">
+```bash
+npm install -g @carbonhost/cli
+```
+</Tab>
+<Tab value="yarn">
+```bash
+yarn global add @carbonhost/cli
+```
+</Tab>
+<Tab value="pnpm">
+```bash
+pnpm add -g @carbonhost/cli
+```
+</Tab>
+<Tab value="bun">
+```bash
+bun add -g @carbonhost/cli
+```
+</Tab>
+</Tabs>
+
+## Command Reference
+
+### Authentication
+
+```bash
+# Login to Carbon CLI
+carbon login
+```
+
+The login command opens your browser to authenticate with Carbon. It will display a verification code that you should verify matches in the browser. After successful authentication, your API key will be saved locally.
+
+Options:
+- `--port, -p`: Specify a custom port for the local authentication server (optional)
+
+### File Deployment
+
+```bash
+# Deploy a file to a star
+carbon deploy <localPath> <starDirectory> --star <starId> [--watch]
+```
+
+The deploy command uploads a local file to a specified directory on your star (server).
+
+Arguments:
+- `localPath`: Path to the local file you want to deploy
+- `starDirectory`: Target directory on the star where the file should be uploaded
+- `--star, -s`: The ID of the star to deploy to
+- `--watch, -w`: Watch for local file changes and auto-deploy (optional)
+
+Examples:
+```bash
+# Deploy a single file
+carbon deploy ./presets/paper-global.yml /config --star abc123
+
+# Deploy and watch for changes
+carbon deploy ./build/libs/PluginPortal.jar /plugins --star abc123 --watch
+```
+
+<Callout type="info">
+When using the watch flag, the CLI will monitor the specified file for changes and automatically upload new versions when detected. This is particularly useful during development.
+</Callout>
+
+### Help
+
+```bash
+# Get general help
+carbon help
+
+# Get help for a specific command
+carbon help <command>
+```
+
+The help command provides detailed information about available commands and their usage.
